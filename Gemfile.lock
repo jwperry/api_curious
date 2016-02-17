@@ -227,6 +227,7 @@ DEPENDENCIES
   figaro
   jbuilder (~> 2.0)
   jquery-rails
+  nokogiri
   omniauth-github
   pg
   pry

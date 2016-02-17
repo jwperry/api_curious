@@ -1,7 +1,11 @@
-<h1>Profile!</h1>
+<h1>Profile</h1>
 <br>
 
-<img src="<%=current_user.image_url%>">
+<h3>Username: <%= current_user.username %></h3>
+<br>
+<br>
+
+<img src="<%= current_user.image_url %>">
 <br>
 <br>
 
@@ -12,14 +16,29 @@
 
 <h3><%= @followers.count %> Followers: </h3>
 <% @followers.each do |follower| %>
-  <%= follower[:login] %>
+  <h4><%= follower[:login] %></h4>
 <% end %>
 <br>
 <br>
 
 <h3><%= @following.count %> Following: </h3>
 <% @following.each do |followed| %>
-  <%= followed[:login] %>
+  <h4><%= followed[:login] %></h4>
 <% end %>
+<br>
+<br>
+
+<h3>Contributions in Last Year: </h3>
+<h4><%= @contributions %></h4>
+<br>
+<br>
+
+<h3>Longest Streak: </h3>
+<h4><%= @longest_streak %></h4>
+<br>
+<br>
+
+<h3>Current Streak: </h3>
+<h4><%= @current_streak %></h4>
 <br>
 <br>
