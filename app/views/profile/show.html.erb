@@ -1,1 +1,25 @@
 <h1>Profile!</h1>
+<br>
+
+<img src="<%=current_user.image_url%>">
+<br>
+<br>
+
+<h3>Number of starred repos: </h3>
+<h4><%= @starred_repos.count %></h4>
+<br>
+<br>
+
+<h3><%= @followers.count %> Followers: </h3>
+<% @followers.each do |follower| %>
+  <%= follower[:login] %>
+<% end %>
+<br>
+<br>
+
+<h3><%= @following.count %> Following: </h3>
+<% @following.each do |followed| %>
+  <%= followed[:login] %>
+<% end %>
+<br>
+<br>

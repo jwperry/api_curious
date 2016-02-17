@@ -1,8 +1,21 @@
 class GithubService
   attr_reader :connection
 
-  def initialize
+  def initialize(current_user)
+    @current_user = current_user
     @connection = Faraday.new(url: "https://api.github.com")
+  end
+
+  def starred_repos
+    parse(connection.get("user/starred", {access_token: @current_user.token}))
+  end
+
+  def followers
+    parse(connection.get("user/followers", {access_token: @current_user.token}))
+  end
+
+  def following
+    parse(connection.get("user/following", {access_token: @current_user.token}))
   end
 
   private
@@ -10,22 +23,4 @@ class GithubService
   def parse(response)
     JSON.parse(response.body, symbolize_names: true)
   end
-
-  # def create_song(data)
-  #   parse(connection.post("songs", data))
-  # end
-
-  # def update_song(data)
-  #   parse(connection.patch("songs/#{id}", data))
-  # end
-
-  # def destroy_song(id)
-  #   parse(connection.delete("songs/#{id}", data))
-  # end
-
 end
-
-# Profile pic
-# Number of starred repos
-# Followers "https://api.github.com/user/followers"
-# Following "https://api.github.com/user/following{/target}"
