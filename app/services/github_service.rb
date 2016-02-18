@@ -37,13 +37,28 @@ class GithubService
 
   def recent_commits
     events = parse(connection.get("users/#{@current_user.username}/events", {access_token: @current_user.token}))
-    pushes = events.select {|event| event[:type] == "PushEvent"}
-    commit_messages = pushes.map do |push|
-      push[:payload][:commits].map do |commit|
-        commit[:message]
-      end
+    select_commits(events)
+  end
+
+  def recent_following_commits
+    tester = following.map do |user|
+      events = parse(connection.get("users/#{user[:login]}/events", {access_token: @current_user.token}))
+      {username: user[:login], commits: select_commits(events)}
     end
-    commit_messages.flatten
+  end
+
+  def select_commits(events)
+    pushes = events.select {|event| event[:type] == "PushEvent"}
+    pushes.map do |push|
+      push[:payload][:commits].map {|commit| commit[:message]}
+    end.flatten
+  end
+
+  def display_recent_following_commits
+    list = recent_following_commits
+    list.map do |user_commit|
+      {username: user_commit[:username], commits: user_commit[:commits][0..4]}
+    end
   end
 
   private

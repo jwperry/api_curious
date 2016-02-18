@@ -8,6 +8,7 @@ class ProfileController < ApplicationController
     @longest_streak = github_service.longest_streak
     @current_streak = github_service.current_streak
     @recent_commits = github_service.recent_commits
+    @recent_following_commits = github_service.display_recent_following_commits
   end
 
 end

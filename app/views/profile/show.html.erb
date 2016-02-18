@@ -49,3 +49,15 @@
 <% end %>
 <br>
 <br>
+
+<h3>Recent Commits From Followed Users: </h3>
+<br>
+<% @recent_following_commits.each do |user_commits| %>
+  <h4><%= user_commits[:username] %></h4>
+  <% user_commits[:commits].each do |commit| %>
+    <h5><%= commit %></h5>
+  <% end %>
+  <br>
+<% end %>
+<br>
+<br>
