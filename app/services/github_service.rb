@@ -65,6 +65,10 @@ class GithubService
     end
   end
 
+  def repositories
+    parse(connection.get("user/repos", {access_token: @current_user.token}))
+  end
+
   private
 
   def parse(response)

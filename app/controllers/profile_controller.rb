@@ -10,6 +10,7 @@ class ProfileController < ApplicationController
     @organizations = github_service.organizations
     @recent_commits = github_service.recent_commits
     @recent_following_commits = github_service.display_recent_following_commits
+    @repositories = github_service.repositories
   end
 
 end
