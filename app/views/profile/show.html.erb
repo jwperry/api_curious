@@ -43,6 +43,13 @@
 <br>
 <br>
 
+<h3>Organizations: </h3>
+<% @organizations.each do |organization| %>
+  <h4><%#= organization[:login] %></h4>
+<% end %>
+<br>
+<br>
+
 <h3>Recent Commits: </h3>
 <% @recent_commits.each do |commit| %>
   <h5><%= commit %></h5>

@@ -35,6 +35,10 @@ class GithubService
     noko_page.xpath('//*[@id="contributions-calendar"]/div[5]/span[2]').text
   end
 
+  def organizations
+    parse(connection.get("user/orgs", {access_token: @current_user.token}))
+  end
+
   def recent_commits
     events = parse(connection.get("users/#{@current_user.username}/events", {access_token: @current_user.token}))
     select_commits(events)
@@ -67,8 +71,3 @@ class GithubService
     JSON.parse(response.body, symbolize_names: true)
   end
 end
-
-# def contributions
-#   @page = Nokogiri::HTML(open("https://github.com/#{@current_user.nickname}"))
-#   @page.xpath("//*[@id='contributions-calendar']/div[3]/span[2]").text
-# end
