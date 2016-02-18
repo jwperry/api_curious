@@ -36,6 +36,14 @@ class GithubService
   end
 
   def recent_commits
+    events = parse(connection.get("users/#{@current_user.username}/events", {access_token: @current_user.token}))
+    pushes = events.select {|event| event[:type] == "PushEvent"}
+    commit_messages = pushes.map do |push|
+      push[:payload][:commits].map do |commit|
+        commit[:message]
+      end
+    end
+    commit_messages.flatten
   end
 
   private

@@ -10,6 +10,6 @@ class ApplicationController < ActionController::Base
   end
 
   def github_service
-    GithubService.new(current_user)
+    @github_service ||= GithubService.new(current_user) if current_user
   end
 end
