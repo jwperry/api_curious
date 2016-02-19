@@ -50,4 +50,16 @@ Shoulda::Matchers.configure do |config|
     with.test_framework :rspec
     with.library :rails
   end
+
+OmniAuth.config.test_mode = true
+OmniAuth.config.mock_auth[:github] =
+            OmniAuth::AuthHash.new(provider: "github",
+                                   uid: ENV["UID"],
+                                   info: { nickname: "jwperry",
+                                           name: "Joe Perry",
+                                           image: "https://avatars.githubusercontent.com/u/13172425?v=3",
+                                           urls: { GitHub: "https://github.com/jwperry" }
+                                           },
+                                   credentials: { token: ENV["USER_TOKEN"], expires: false })
 end
+
