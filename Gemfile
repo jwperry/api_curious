@@ -12,6 +12,7 @@ gem 'pg'
 gem 'omniauth-github'
 gem 'nokogiri'
 gem 'pry'
+gem 'faraday'
 
 group :development, :test do
   gem 'byebug'
@@ -21,6 +22,12 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'factory_girl_rails', '~> 4.0'
   gem 'shoulda-matchers', '~> 3.1'
+  gem 'launchy'
+end
+
+group :test do
+  gem 'vcr'
+  gem 'webmock'
 end
 
 group :development do

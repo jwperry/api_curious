@@ -1,0 +1,79 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.github.com/user/starred?access_token=6db313009629778e273460b3a9bab9d8cf356e1b
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Fri, 19 Feb 2016 17:08:59 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4982'
+      X-Ratelimit-Reset:
+      - '1455903443'
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Etag:
+      - W/"ee34e2506059094a9a2889f502f328ac"
+      X-Oauth-Scopes:
+      - ''
+      X-Accepted-Oauth-Scopes:
+      - ''
+      X-Oauth-Client-Id:
+      - 56a18f1782f532ec9f74
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP
+      - Accept-Encoding
+      X-Github-Media-Type:
+      - github.v3
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Expose-Headers:
+      - ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset,
+        X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Security-Policy:
+      - default-src 'none'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Served-By:
+      - 2811da37fbdda4367181b328b22b2499
+      X-Github-Request-Id:
+      - 3F910F62:C8D0:B099C0F:56C74C2B
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"id":50874809,"name":"the_pivot","full_name":"jwperry/the_pivot","owner":{"login":"jwperry","id":13172425,"avatar_url":"https://avatars.githubusercontent.com/u/13172425?v=3","gravatar_id":"","url":"https://api.github.com/users/jwperry","html_url":"https://github.com/jwperry","followers_url":"https://api.github.com/users/jwperry/followers","following_url":"https://api.github.com/users/jwperry/following{/other_user}","gists_url":"https://api.github.com/users/jwperry/gists{/gist_id}","starred_url":"https://api.github.com/users/jwperry/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/jwperry/subscriptions","organizations_url":"https://api.github.com/users/jwperry/orgs","repos_url":"https://api.github.com/users/jwperry/repos","events_url":"https://api.github.com/users/jwperry/events{/privacy}","received_events_url":"https://api.github.com/users/jwperry/received_events","type":"User","site_admin":false},"private":false,"html_url":"https://github.com/jwperry/the_pivot","description":"Pivoting
+        Little Shop Project (\"Rough Sketch\")","fork":false,"url":"https://api.github.com/repos/jwperry/the_pivot","forks_url":"https://api.github.com/repos/jwperry/the_pivot/forks","keys_url":"https://api.github.com/repos/jwperry/the_pivot/keys{/key_id}","collaborators_url":"https://api.github.com/repos/jwperry/the_pivot/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/jwperry/the_pivot/teams","hooks_url":"https://api.github.com/repos/jwperry/the_pivot/hooks","issue_events_url":"https://api.github.com/repos/jwperry/the_pivot/issues/events{/number}","events_url":"https://api.github.com/repos/jwperry/the_pivot/events","assignees_url":"https://api.github.com/repos/jwperry/the_pivot/assignees{/user}","branches_url":"https://api.github.com/repos/jwperry/the_pivot/branches{/branch}","tags_url":"https://api.github.com/repos/jwperry/the_pivot/tags","blobs_url":"https://api.github.com/repos/jwperry/the_pivot/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/jwperry/the_pivot/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/jwperry/the_pivot/git/refs{/sha}","trees_url":"https://api.github.com/repos/jwperry/the_pivot/git/trees{/sha}","statuses_url":"https://api.github.com/repos/jwperry/the_pivot/statuses/{sha}","languages_url":"https://api.github.com/repos/jwperry/the_pivot/languages","stargazers_url":"https://api.github.com/repos/jwperry/the_pivot/stargazers","contributors_url":"https://api.github.com/repos/jwperry/the_pivot/contributors","subscribers_url":"https://api.github.com/repos/jwperry/the_pivot/subscribers","subscription_url":"https://api.github.com/repos/jwperry/the_pivot/subscription","commits_url":"https://api.github.com/repos/jwperry/the_pivot/commits{/sha}","git_commits_url":"https://api.github.com/repos/jwperry/the_pivot/git/commits{/sha}","comments_url":"https://api.github.com/repos/jwperry/the_pivot/comments{/number}","issue_comment_url":"https://api.github.com/repos/jwperry/the_pivot/issues/comments{/number}","contents_url":"https://api.github.com/repos/jwperry/the_pivot/contents/{+path}","compare_url":"https://api.github.com/repos/jwperry/the_pivot/compare/{base}...{head}","merges_url":"https://api.github.com/repos/jwperry/the_pivot/merges","archive_url":"https://api.github.com/repos/jwperry/the_pivot/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/jwperry/the_pivot/downloads","issues_url":"https://api.github.com/repos/jwperry/the_pivot/issues{/number}","pulls_url":"https://api.github.com/repos/jwperry/the_pivot/pulls{/number}","milestones_url":"https://api.github.com/repos/jwperry/the_pivot/milestones{/number}","notifications_url":"https://api.github.com/repos/jwperry/the_pivot/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/jwperry/the_pivot/labels{/name}","releases_url":"https://api.github.com/repos/jwperry/the_pivot/releases{/id}","deployments_url":"https://api.github.com/repos/jwperry/the_pivot/deployments","created_at":"2016-02-01T22:05:52Z","updated_at":"2016-02-17T21:24:10Z","pushed_at":"2016-02-11T19:10:49Z","git_url":"git://github.com/jwperry/the_pivot.git","ssh_url":"git@github.com:jwperry/the_pivot.git","clone_url":"https://github.com/jwperry/the_pivot.git","svn_url":"https://github.com/jwperry/the_pivot","homepage":null,"size":6807,"stargazers_count":3,"watchers_count":3,"language":"Ruby","has_issues":true,"has_downloads":true,"has_wiki":true,"has_pages":false,"forks_count":0,"mirror_url":null,"open_issues_count":0,"forks":0,"open_issues":0,"watchers":3,"default_branch":"master","permissions":{"admin":true,"push":true,"pull":true}}]'
+    http_version: 
+  recorded_at: Fri, 19 Feb 2016 17:08:59 GMT
+recorded_with: VCR 3.0.1

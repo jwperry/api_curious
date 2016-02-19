@@ -1,0 +1,78 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.github.com/user/following?access_token=6db313009629778e273460b3a9bab9d8cf356e1b
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Fri, 19 Feb 2016 17:08:59 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4980'
+      X-Ratelimit-Reset:
+      - '1455903443'
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Etag:
+      - W/"d731916f8d5951b0d73f7af8b79202d3"
+      X-Oauth-Scopes:
+      - ''
+      X-Accepted-Oauth-Scopes:
+      - ''
+      X-Oauth-Client-Id:
+      - 56a18f1782f532ec9f74
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP
+      - Accept-Encoding
+      X-Github-Media-Type:
+      - github.v3
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Expose-Headers:
+      - ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset,
+        X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Security-Policy:
+      - default-src 'none'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Served-By:
+      - e724c57ebb9961c772a91e2dd7421c8d
+      X-Github-Request-Id:
+      - 3F910F62:C8D5:12C08680:56C74C2B
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"login":"brantwellman","id":6422641,"avatar_url":"https://avatars.githubusercontent.com/u/6422641?v=3","gravatar_id":"","url":"https://api.github.com/users/brantwellman","html_url":"https://github.com/brantwellman","followers_url":"https://api.github.com/users/brantwellman/followers","following_url":"https://api.github.com/users/brantwellman/following{/other_user}","gists_url":"https://api.github.com/users/brantwellman/gists{/gist_id}","starred_url":"https://api.github.com/users/brantwellman/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/brantwellman/subscriptions","organizations_url":"https://api.github.com/users/brantwellman/orgs","repos_url":"https://api.github.com/users/brantwellman/repos","events_url":"https://api.github.com/users/brantwellman/events{/privacy}","received_events_url":"https://api.github.com/users/brantwellman/received_events","type":"User","site_admin":false},{"login":"martensonbj","id":13123158,"avatar_url":"https://avatars.githubusercontent.com/u/13123158?v=3","gravatar_id":"","url":"https://api.github.com/users/martensonbj","html_url":"https://github.com/martensonbj","followers_url":"https://api.github.com/users/martensonbj/followers","following_url":"https://api.github.com/users/martensonbj/following{/other_user}","gists_url":"https://api.github.com/users/martensonbj/gists{/gist_id}","starred_url":"https://api.github.com/users/martensonbj/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/martensonbj/subscriptions","organizations_url":"https://api.github.com/users/martensonbj/orgs","repos_url":"https://api.github.com/users/martensonbj/repos","events_url":"https://api.github.com/users/martensonbj/events{/privacy}","received_events_url":"https://api.github.com/users/martensonbj/received_events","type":"User","site_admin":false}]'
+    http_version: 
+  recorded_at: Fri, 19 Feb 2016 17:08:59 GMT
+recorded_with: VCR 3.0.1
