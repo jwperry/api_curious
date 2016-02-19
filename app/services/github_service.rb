@@ -5,19 +5,24 @@ class GithubService
 
   def initialize(current_user)
     @current_user = current_user
-    @connection = Faraday.new(url: "https://api.github.com")
+    @connection = Faraday.new(url: "https://api.github.com") do |faraday|
+      # faraday.request :url_encoded
+      # faraday.response :logger
+      faraday.adapter Faraday.default_adapter
+      faraday.params[:access_token] = current_user.token
+    end
   end
 
   def starred_repos
-    parse(connection.get("user/starred", {access_token: @current_user.token}))
+    parse(connection.get("user/starred"))
   end
 
   def followers
-    parse(connection.get("user/followers", {access_token: @current_user.token}))
+    parse(connection.get("user/followers"))
   end
 
   def following
-    parse(connection.get("user/following", {access_token: @current_user.token}))
+    parse(connection.get("user/following"))
   end
 
   def contributions_in_last_year
@@ -36,17 +41,17 @@ class GithubService
   end
 
   def organizations
-    parse(connection.get("user/orgs", {access_token: @current_user.token}))
+    parse(connection.get("users/#{@current_user.username}/orgs"))
   end
 
   def recent_commits
-    events = parse(connection.get("users/#{@current_user.username}/events", {access_token: @current_user.token}))
+    events = parse(connection.get("users/#{@current_user.username}/events"))
     select_commits(events)
   end
 
   def recent_following_commits
-    tester = following.map do |user|
-      events = parse(connection.get("users/#{user[:login]}/events", {access_token: @current_user.token}))
+    following.map do |user|
+      events = parse(connection.get("users/#{user[:login]}/events"))
       {username: user[:login], commits: select_commits(events)}
     end
   end
@@ -66,7 +71,7 @@ class GithubService
   end
 
   def repositories
-    parse(connection.get("user/repos", {access_token: @current_user.token}))
+    parse(connection.get("user/repos"))
   end
 
   private

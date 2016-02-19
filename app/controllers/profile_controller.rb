@@ -1,16 +1,7 @@
 class ProfileController < ApplicationController
 
   def show
-    @starred_repos = github_service.starred_repos
-    @followers = github_service.followers
-    @following = github_service.following
-    @contributions = github_service.contributions_in_last_year
-    @longest_streak = github_service.longest_streak
-    @current_streak = github_service.current_streak
-    @organizations = github_service.organizations
-    @recent_commits = github_service.recent_commits
-    @recent_following_commits = github_service.display_recent_following_commits
-    @repositories = github_service.repositories
+    @profile_data = ProfileData.new(current_user).build_profile_data
   end
 
 end

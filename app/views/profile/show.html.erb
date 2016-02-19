@@ -10,48 +10,48 @@
 <br>
 
 <h3>Number of starred repos: </h3>
-<h4><%= @starred_repos.count %></h4>
+<h4><%= @profile_data[:starred_repos].count %></h4>
 <br>
 <br>
 
-<h3><%= @followers.count %> Followers: </h3>
-<% @followers.each do |follower| %>
+<h3><%= @profile_data[:followers].count %> Followers: </h3>
+<% @profile_data[:followers].each do |follower| %>
   <h4><%= follower[:login] %></h4>
 <% end %>
 <br>
 <br>
 
-<h3><%= @following.count %> Following: </h3>
-<% @following.each do |followed| %>
+<h3><%= @profile_data[:following].count %> Following: </h3>
+<% @profile_data[:following].each do |followed| %>
   <h4><%= followed[:login] %></h4>
 <% end %>
 <br>
 <br>
 
 <h3>Contributions in Last Year: </h3>
-<h4><%= @contributions %></h4>
+<h4><%= @profile_data[:contributions] %></h4>
 <br>
 <br>
 
 <h3>Longest Streak: </h3>
-<h4><%= @longest_streak %></h4>
+<h4><%= @profile_data[:longest_streak] %></h4>
 <br>
 <br>
 
 <h3>Current Streak: </h3>
-<h4><%= @current_streak %></h4>
+<h4><%= @profile_data[:current_streak] %></h4>
 <br>
 <br>
 
 <h3>Organizations: </h3>
-<% @organizations.each do |organization| %>
-  <h4><%#= organization[:login] %></h4>
+<% @profile_data[:organizations].each do |organization| %>
+  <h4><%= organization[:login] %></h4>
 <% end %>
 <br>
 <br>
 
 <h3>Recent Commits: </h3>
-<% @recent_commits.each do |commit| %>
+<% @profile_data[:recent_commits].each do |commit| %>
   <h5><%= commit %></h5>
 <% end %>
 <br>
@@ -59,7 +59,7 @@
 
 <h3>Recent Commits From Followed Users: </h3>
 <br>
-<% @recent_following_commits.each do |user_commits| %>
+<% @profile_data[:recent_following_commits].each do |user_commits| %>
   <h4><%= user_commits[:username] %></h4>
   <% user_commits[:commits].each do |commit| %>
     <h5><%= commit %></h5>
@@ -70,7 +70,7 @@
 <br>
 
 <h3>Repositories: </h3>
-<% @repositories.each do |repo| %>
+<% @profile_data[:repositories].each do |repo| %>
   <h4><%= repo[:name] %></h4>
 <% end %>
 <br>
